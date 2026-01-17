@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     }
 
     // 1. Fetch Active UPI ID from config
-    const configSnapshot = await db.ref('/config/upi/activeUpiId').once('value');
+    const configSnapshot = await db.ref('/settings/upiDetails').once('value');
     const activeUpiId = configSnapshot.val();
 
     if (!activeUpiId) {
